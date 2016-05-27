@@ -4,6 +4,8 @@
 using namespace std;
 
 // Autsin Gottselig
+// COP 3330
+// Date.cpp
 
 Date::Date()
 {
