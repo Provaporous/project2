@@ -6,6 +6,18 @@ using namespace std;
 // Autsin Gottselig
 // COP 3330
 // Date.cpp
+//
+//	This class creates and modifies Date objects for use in other main functions.
+//	This class will also handle leap years and julian date output formatting.
+//
+//
+
+
+//CONSTRUCTORS
+//
+//	The caller can either call with no parameters, or all 3
+//	If the date is invalid, the date is set to jan 1, 2000
+//	only positive years allowed
 
 Date::Date()
 {
@@ -32,6 +44,17 @@ Date::Date(int m, int d, int y)
 	}
 	
 }
+
+//	const bool Date::CheckDate
+//	
+//	PARAMETERS: (const int m,const int d,const int y)
+//
+//	const int m : month, is not changed by function.
+//	const int d : day, is not changed by function.
+//	const int y : year, is not changed by function.
+// 
+//	This member function checks if a date is valid for the year given.
+//	Handles leapyears
 const bool Date::CheckDate(const int m,const int d,const int y)
 {
 	
@@ -76,18 +99,45 @@ const bool Date::CheckDate(const int m,const int d,const int y)
 		else return true;
 	}
 }
+
+//	const int Date::GetMonth() const
+//	
+//	PARAMETERS: none
+// 
+//	This member function returns the month, a private data item.
 const int Date::GetMonth() const 
 {
 	return month;
 }
+
+//	const int Date::GetDay() const
+//	
+//	PARAMETERS: none
+// 
+//	This member function returns the day, a private data item.
 const int Date::GetDay() const 
 {
 	return day;
 }
+
+//	const int Date::GetYear() const
+//	
+//	PARAMETERS: none
+// 
+//	This member function returns the year, a private data item.
 const int Date::GetYear() const
 {
 	return year;
 }
+
+//	bool Date::SetFormat
+//	
+//	PARAMETERS: (char f)
+// 
+//	char f : The format requested, D,T,L, or J are allowed
+//
+//	This member finction mutates the private data item format, to either default,two digit, long, or julian format.
+//	returns true if exits correctly.
 bool Date::SetFormat(char f)
 {
 	if (f == 'D' || f == 'T' || f == 'L'|| f=='J')
@@ -97,6 +147,13 @@ bool Date::SetFormat(char f)
 	}
 	else return false;
 }
+
+//	void Date::Input()
+//	
+//	PARAMETERS: none
+//
+//	This member function mutates the date member data based on what the user enters on the keyboard.
+//	error checks usign the checkdate function.
 void Date::Input()
 {
 	int m, d, y;
@@ -138,16 +195,16 @@ void Date::Show()
 		switch (month)
 		{
 		case 1:
-			cout << "January ";
+			cout << "Jan ";
 			break;
 		case 2:
-			cout << "February ";
+			cout << "Feb ";
 			break;
 		case 3:
-			cout << "March ";
+			cout << "Mar ";
 			break;
 		case 4:
-			cout << "April ";
+			cout << "Apr ";
 			break;
 		case 5:
 			cout << "May ";
@@ -159,21 +216,21 @@ void Date::Show()
 			cout << "July ";
 			break;
 		case 8:
-			cout << "August ";
+			cout << "Aug ";
 			break;
 		case 9:
-			cout << "September ";
+			cout << "Sept ";
 			break;
 		case 10:
-			cout << "October ";
+			cout << "Oct ";
 			break;
 		case 11:
-			cout << "November ";
+			cout << "Nov ";
 			break;
 		case 12:
-			cout << "December ";
+			cout << "Dec ";
 			break;
-		default: cout << "this shouldnt't happen, what did you do!";
+		default: cout << "ERR0R 37";
 		}
 		cout << day << ", " << year;
 		break;
