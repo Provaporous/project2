@@ -16,4 +16,7 @@ int main()
 	cout << endl;
 	d3.Show();
 	cout << endl<<d3.Compare(d2);
+	d3.Input();
+	d3.SetFormat('J');
+	d3.Show();
 }

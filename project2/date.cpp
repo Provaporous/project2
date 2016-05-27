@@ -171,6 +171,14 @@ void Date::Input()
 	day = d;
 	year = y;
 }
+
+//	void Date::Show()
+//	
+//	PARAMETERS: none
+//
+//	This member function prints the date to the screen based on the current format of the object.
+//	Handles leap years and the Julian calendar
+//	resets changes to the output stream
 void Date::Show()
 {
 	// capture current output stream settings
@@ -295,6 +303,16 @@ void Date::Show()
 	cout.fill(oldfill);			// restore old fill char setting
 	cout.flags(oldflags);		// restore all prior format flags
 }
+
+//	void Date::Increment
+//	
+//	PARAMETERS: (const int n)
+//
+//	const int n: the number of days to increment by.
+//
+//	This member function increments the date.
+//	Handles leap years and the Julian calendar.
+//	Handles values of n that go over multiple months and years.
 void Date::Increment(const int n)
 {
 	
@@ -388,6 +406,15 @@ void Date::Increment(const int n)
 	
 
 }
+
+//	int Date::Compare(const Date& d)
+//	
+//	PARAMETERS: (const Date& d)
+//
+//	const Date& d: the date object to be compared to
+//
+//	This member function returns -1 if the caller comes before the parameter,
+//	0 if it is the same date, and 1 if the callign object is after the parameter.
 int Date::Compare(const Date& d)
 {
 	if (year < d.year) return -1;
