@@ -53,6 +53,7 @@ Date::Date(int m, int d, int y)
 //	const int d : day, is not changed by function.
 //	const int y : year, is not changed by function.
 // 
+//
 //	This member function checks if a date is valid for the year given.
 //	Handles leapyears
 const bool Date::CheckDate(const int m,const int d,const int y)
